@@ -1,0 +1,26 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	&:hover {
+		// 
+	}
+
+	&:active,
+	&:focus {
+		outline: 0;
+	}
+}
+
+.btn {
+	background-color: transparent;
+	border: 3px solid $color-black;
+	border-radius: 0;
+	color: $color-black;
+	display: inline-block;
+	font-family: $font-primary;
+	font-size: 1.6rem;
+	font-style: italic;
+	padding: 11px 33px;
+}

@@ -1,0 +1,69 @@
+// About Section
+// ------------------------------------------------------------------
+.about {
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: 650px;
+
+    @include MQ(XS) {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .section-left,
+    .section-right {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+   .section-left {
+        background-color: $color-salmon;
+        width: 100%;
+
+        @include MQ(XS) {
+            width: 66%;
+        }
+
+        .section-inner {
+            color: $color-white;
+            font-family: $font-medium;
+            font-size: 1rem;
+            letter-spacing: 0.085rem;
+            line-height: 2.2rem;
+            padding: 70px 45px;
+            
+
+            @include MQ(XS) {
+                font-size: 1.3rem;
+                font-size: 1.3rem;
+                line-height: 2.6rem;
+                max-width: 500px;
+                padding: 0;
+            }
+        }
+    }
+
+    .section-right {
+        background-color: $color-pink;
+        height: 240px;
+        width: 100%;
+
+        @include MQ(XS) {
+            height: auto;
+            width: 34%;
+        }
+
+        img {
+            height: 53px;
+
+            @include MQ(XS) {
+                height: auto;
+            }
+        }
+    }
+
+    .section-inner {
+        padding: 20px;
+    }
+}

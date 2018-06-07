@@ -1,0 +1,35 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	color: $color-black;
+	font-weight: 100;
+}
+
+h1 {
+	font-family: $font-primary;
+	font-size: 3.4rem;
+	letter-spacing: 0.227rem;
+	margin: 0;
+	text-transform: uppercase;
+
+	@include MQ(XS) {
+		font-size: 4rem;
+		letter-spacing: 0.24rem;
+	}
+}
+
+h2 {
+	font-family: $font-primary;
+	font-size: 3.2rem;
+	letter-spacing: 0.24rem;
+	margin: 0;
+	text-transform: uppercase;
+}

@@ -1,0 +1,82 @@
+.main-navigation {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 45px 0;
+	// padding: 0 60px;
+	position: relative;
+
+	@include MQ(XS) {
+		margin: 0 0 140px 0;
+	}
+
+	a {
+		color: $color-pink;
+		font-size: 1.1rem;
+		letter-spacing: 0.069rem;
+		text-transform: uppercase;
+	}
+}
+
+.menu-left,
+.menu-right {
+	display: none;
+
+	@include MQ(XS) {
+		display: block;
+	}
+}
+
+.menu-logo {
+	margin: 0 auto;
+
+	@include MQ(XS) {
+		left: 50%;
+		position: absolute;
+		top: -20px;
+		transform: translateX(-50%);
+	}
+
+	img {
+		height: 95px;
+
+		@include MQ(XS) {
+			height: auto;
+			width: 215px;
+		}
+	}
+}
+
+.menu-link-group {
+	border: 1px solid $color-black;
+	display: flex;
+	flex-grow: 1;
+	margin: 0 0 45px 0;
+
+	@include MQ(XS) {
+		display: none;
+	}
+}
+
+.menu-link {
+	flex-basis: 50%;
+
+	a {
+		color: $color-salmon;
+		display: block;
+		font-family: $font-medium;
+		font-size: 1rem;
+		letter-spacing: 0.062rem;
+		line-height: 1rem;
+		padding: 1.7rem 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&:first-child {
+		border-right: 1px solid $color-black;
+
+		a {
+			color: $color-pink;
+		}
+	}
+}

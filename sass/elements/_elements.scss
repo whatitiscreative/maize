@@ -1,0 +1,36 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background-color: $color-white;
+	overflow-x: hidden;
+
+	&.halt {
+		overflow: hidden;
+	}
+
+	// moving the body up when logged in so there isn't a gap
+	// that is caused by the admin bar
+	&.admin-bar {
+		margin-top: -32px;
+	}
+}
+
+hr {
+	background-color: $color-black;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
