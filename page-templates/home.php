@@ -14,66 +14,17 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+            <?php // Hero. Images are added in main.js ?>
             <div id="hero" class="hero">
                 <img class="logo" src="<?php bloginfo('template_url'); ?>/images/logo-main.svg" alt="Maize">
             </div>
-
-
-
-            <!-- <section class="main-content">
-                <div class="row">
-                    <div class="col-lg-1">COL 1</div>
-                    <div class="col-xs-12 col-lg-10">
-                        <header>
-                            <nav id="site-navigation" class="main-navigation">
-                                <div class="menu-left">
-                                    <a href="#">Order Cookies</a>
-                                </div>
-
-                                <div class="menu-logo">
-                                    <a href="/"><img src="<?php bloginfo('template_url'); ?>/images/logo-secondary.svg" alt="Maize"></a>
-                                </div>
-
-                                <div class="menu-right">
-                                    <a href="#">About Us</a>
-                                </div>
-                            </nav>
-                        </header>
-                    </div>
-                    <div class="col-lg-1">COL 1</div>
-                </div> -->
-
-                <!--
-                <div class="grid">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_01.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_02.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_05.png">
-                    </div>
-                </div>
-                -->
-
-
-
 
             <section class="main-content">
                 <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-xs-12">
                         <header>
+                            <?php // Desktop Menu ?>
                             <nav id="site-navigation" class="main-navigation">
                                 <div class="menu-left">
                                     <a href="mailto:<?php the_field('email_address'); ?>" target="_blank">Order Cookies</a>
@@ -92,6 +43,7 @@ get_header();
                     <div class="col-lg-1"></div>
                 </div>
 
+                <?php // Mobile Menu ?>
                 <div class="menu-link-group">
                     <div class="menu-link">
                         <a href="mailto:<?php the_field('email_address'); ?>" target="_blank">Order Cookies</a>
@@ -101,85 +53,7 @@ get_header();
                     </div>
                 </div>
 
-                <!-- <section class="img-grid">
-                    <figure style="grid-area: bigsquare;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                        <figcaption>A</figcaption>
-                    </figure>
-                    <figure style="grid-area: smallsquare;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                        <figcaption>B</figcaption>
-                    </figure>
-                    <figure style="grid-area: mediumtall;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                        <figcaption>C</figcaption>
-                    </figure>
-                    <figure style="grid-area: mediumsquare;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_01.png">
-                        <figcaption>D</figcaption>
-                    </figure>
-                    <figure style="grid-area: smalltall;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_02.png">
-                        <figcaption>E</figcaption>
-                    </figure>
-                    <figure style="grid-area: smallsquare2;">
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_05.png">
-                        <figcaption>F</figcaption>
-                    </figure>
-                </section> -->
-
-                
-
-                <!-- <div class="grid-2">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                        <div class="image-title">A</div>
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                        <div class="image-title">B</div>
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                        <div class="image-title">C</div>
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_01.png">
-                        <div class="image-title">D</div>
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_02.png">
-                        <div class="image-title">E</div>
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_05.png">
-                        <div class="image-title">F</div>
-                    </div>
-                </div> -->
-
-
-                <!-- <div class="grid">
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_01.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_02.png">
-                    </div>
-                    <div>
-                        <img src="<?php bloginfo('template_url'); ?>/images/img_05.png">
-                    </div>
-                </div> -->
-
-
+                <?php // Mobile Image Grid ?>
                 <div class="mobile-grid">
                     <div>
                         <img src="<?php echo get_field('modal_1_preview_image')['url']; ?>">
@@ -207,75 +81,7 @@ get_header();
                     </div>
                 </div>
 
-
-
-                <!-- <div class="row">
-                    <div class="col-lg-1">COL 1</div>
-                    <div class="col-1">
-                        <div class="img-card">
-                            <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                            <div class="img-card-title">Dark Chocolate Biscuits</div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        
-                        <div class="img-card">
-                            <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                            <div class="img-card-title">Chocolate Creams</div>
-                        </div>
-                        <div class="img-card">
-                            <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                            <div class="img-card-title">Almond Curd Drops w/ Coconut Glaze</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1">COL 1</div>
-                </div> -->
-
-                <!-- <div class="row">
-                    <div class="col-lg-1">COL 1</div>
-                    <div class="col-xs-12 col-l-10">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div class="row">
-                                    <div class="img-card left">
-                                        <img src="<?php bloginfo('template_url'); ?>/images/img_00.png">
-                                        <div class="img-card-title">Dark Chocolate Biscuits</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-7">
-                                        <div class="img-card left">
-                                            <img src="<?php bloginfo('template_url'); ?>/images/img_01.png">
-                                            <div class="img-card-title">Apricot Drops w/ Almond Glaze</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-cs-5">
-                                        <div class="img-card">
-                                            <img src="<?php bloginfo('template_url'); ?>/images/img_02.png">
-                                            <div class="img-card-title">Ginger Snaps</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <div class="img-card">
-                                    <img src="<?php bloginfo('template_url'); ?>/images/img_03.png">
-                                    <div class="img-card-title">Chocolate Creams</div>
-                                </div>
-                                <div class="img-card">
-                                    <img src="<?php bloginfo('template_url'); ?>/images/img_04.png">
-                                    <div class="img-card-title">Almond Curd Drops w/ Coconut Glaze</div>
-                                </div>
-                                <div class="img-card">
-                                    <img src="<?php bloginfo('template_url'); ?>/images/img_05.png">
-                                    <div class="img-card-title">Dark Chocolate Biscuits</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1">COL 1</div>
-                </div> -->
-
+                <?php // Desktop Image Grid ?>
                 <div class="fig-grid">
                     <div class="row fig-grid-top">
                         <div class="col-xs-8">

@@ -9,8 +9,6 @@
             fileName: 'hero_00.png',
             x: '23%',
             y: '2%',
-            width: '281',
-            height: '180',
             directionx: 'left',
             directiony: 'top',
         },
@@ -18,8 +16,6 @@
             fileName: 'hero_01.png',
             x: '23%',
             y: '4%',
-            width: '200',
-            height: '160',
             directionx: 'right',
             directiony: 'top',
         },
@@ -27,8 +23,6 @@
             fileName: 'hero_02.png',
             x: '1%',
             y: '15%',
-            width: '177',
-            height: '75',
             directionx: 'right',
             directiony: 'top',
         },
@@ -36,8 +30,6 @@
             fileName: 'hero_03.png',
             x: '5%',
             y: '18%',
-            width: '177',
-            height: '75',
             directionx: 'left',
             directiony: 'top',
         },
@@ -45,8 +37,6 @@
             fileName: 'hero_04.png',
             x: '16%',
             y: '34%',
-            width: '177',
-            height: '75',
             directionx: 'right',
             directiony: 'top',
         },
@@ -54,8 +44,6 @@
             fileName: 'hero_05.png',
             x: '25%',
             y: '34%',
-            width: '177',
-            height: '75',
             directionx: 'left',
             directiony: 'bottom',
         },
@@ -63,8 +51,6 @@
             fileName: 'hero_06.png',
             x: '28%',
             y: '24%',
-            width: '177',
-            height: '75',
             directionx: 'right',
             directiony: 'bottom',
         },
@@ -72,8 +58,6 @@
             fileName: 'hero_07.png',
             x: '4%',
             y: '20%',
-            width: '177',
-            height: '75',
             directionx: 'left',
             directiony: 'bottom',
         },
@@ -81,8 +65,6 @@
             fileName: 'hero_08.png',
             x: '3%',
             y: '13%',
-            width: '177',   
-            height: '75',
             directionx: 'right',
             directiony: 'bottom',
         },
@@ -90,8 +72,6 @@
             fileName: 'hero_09.png',
             x: '17%',
             y: '1%',
-            width: '177',
-            height: '75',
             directionx: 'left',
             directiony: 'bottom',
         },
@@ -99,27 +79,21 @@
             fileName: 'hero_10.png',
             x: '39%',
             y: '2%',
-            width: '177',
-            height: '75',
             directionx: 'right',
             directiony: 'bottom',
         }
     }
 
     for(var key in heroImgs) {
-        var fileName = heroImgs[key].fileName;
-        var x = heroImgs[key].x;
-        var y = heroImgs[key].y;
-        var width = heroImgs[key].width;
-        var height = heroImgs[key].height;
-        var directionx = heroImgs[key].directionx;
-        var directiony = heroImgs[key].directiony;
+        var fileName    = heroImgs[key].fileName;
+        var x           = heroImgs[key].x;
+        var y           = heroImgs[key].y;
+        var directionx  = heroImgs[key].directionx;
+        var directiony  = heroImgs[key].directiony;
+        var img         = document.createElement('img');
 
-        var img = document.createElement('img');
         img.src = '/wp-content/themes/maize/images/' + fileName;
         img.style.position = 'absolute';
-        // img.style.width = width + 'px';
-        // img.style.height = height + 'px';
 
         // set absolute left or right position
         if(directionx === 'left') {
@@ -135,8 +109,10 @@
             img.style.bottom = y;
         }
 
+        // add class for hover effects
         img.classList.add('hero-img');
 
+        // append to #hero
         document.getElementById('hero').appendChild(img);
     }
 
