@@ -50,7 +50,7 @@
 	border: 1px solid $color-black;
 	display: flex;
 	flex-grow: 1;
-	margin: 0 0 45px 0;
+	margin: 0 0 20px 0;
 
 	@include MQ(XS) {
 		display: none;

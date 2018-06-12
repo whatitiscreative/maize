@@ -9,6 +9,9 @@
  * @package Maize
  */
 
+$instagram_link = get_field('instagram_link');
+$facebook_link = get_field('facebook_link');
+
 ?>
 
 	</div><!-- #content -->
@@ -18,7 +21,7 @@
 		<div class="about" id="about">		
 			<div class="section-left">
 				<div class="section-inner">
-					A cookie is a baked or cooked good that is small, flat, and sweet, usually containing flour, sugar and some type of oil or fat. It may include other ingredients such as raisins, oats, chocolate chips or nuts. In most English-speaking countries except for the US and Canada, crisp cookies are called biscuits. Chewier biscuits are sometimes called cookies even in the UK. Some cookies may also be named by their shape.
+					<?php the_field('about_copy'); ?>
 				</div>
 			</div>
 			<div class="section-right">
@@ -33,12 +36,16 @@
 				<div class="footer-logo">
 					<a href="/"><img src="<?php bloginfo('template_url'); ?>/images/logo-footer.svg" alt="Maize"></a>
 				</div>
-				<!--
+				
 				<div class="footer-info">
-					<a href="#" target="_blank">The Gram</a><br>
-					<a href="#" target="_blank">The Book</a>
+					<?php if(!empty($instagram_link)): ?>
+						<a href="<?php echo $instagram_link['url']; ?>" target="<?php echo $instagram_link['target']; ?>"><?php echo $instagram_link['title']; ?></a>
+					<?php endif; ?>
+					<?php if(!empty($facebook_link)): ?>
+						<br><a href="<?php echo $facebook_link['url']; ?>" target="<?php echo $facebook_link['target']; ?>"><?php echo $facebook_link['title']; ?></a>
+					<?php endif; ?>
 				</div>
-				-->
+				
 			</div>
 			<div class="footer-right">
 				<div class="footer-telephone">TEL.<br><?php the_field('area_code'); ?><br><?php the_field('phone_number'); ?></div>
@@ -48,19 +55,25 @@
 		</div>
 
 		<div class="footer-mobile">
-			<!--
+			
 			<div class="footer-link-group">
-				<div class="footer-link">
-					<a href="#">The Gram</a>
-				</div>
-				<div class="footer-link">
-					<a href="#">The Book</a>
-				</div>
+				<?php if(!empty($instagram_link)): ?>
+					<div class="footer-link">
+						<a href="<?php echo $instagram_link['url']; ?>" target="<?php echo $instagram_link['target']; ?>"><?php echo $instagram_link['title']; ?></a>
+					</div>
+				<?php endif; ?>
+				<?php if(!empty($facebook_link)): ?>
+					<div class="footer-link">
+						<a href="<?php echo $facebook_link['url']; ?>" target="<?php echo $facebook_link['target']; ?>"><?php echo $facebook_link['title']; ?></a>
+					</div>
+				<?php endif; ?>
 			</div>
-			-->
+			
 			<div class="footer-mobile-info">
-				<div class="footer-mobile-telephone"><a href="tel:8044264466">TEL<br><?php the_field('area_code'); ?><br><?php the_field('phone_number'); ?></a></div>
-				<div class="footer-mobile-email"><a href="mailto:<?php the_field('email_address'); ?>" target="_blank"><?php the_field('email_address'); ?></a></div>
+				<div class="row col-xs between-xs col-flushed">
+					<div class="footer-mobile-telephone"><a href="tel:8044264466">TEL<br><?php the_field('area_code'); ?><br><?php the_field('phone_number'); ?></a></div>
+					<div class="footer-mobile-email"><a href="mailto:<?php the_field('email_address'); ?>" target="_blank"><?php the_field('email_address'); ?></a></div>
+				</div>
 				<div class="footer-mobile-copyright">Copyright <?php echo date('Y'); ?></div>
 			</div>
 		</div>

@@ -94,8 +94,8 @@
 .footer-link {
     flex-grow: 1;
 
-    &:first-child {
-        border-right: 1px solid $color-pink;
+    &:last-child {
+        border-left: 1px solid $color-pink;
     }
 
     a {
@@ -152,4 +152,11 @@
     letter-spacing: 0.085rem;
     text-align: center;
     text-transform: uppercase;
+}
+
+// we don't want to show the footer on the mobile order form page
+.page-template-mobile-order {
+    #colophon {
+        display: none;
+    }
 }

@@ -38,6 +38,36 @@
             "maxlength": ""
         },
         {
+            "key": "field_5b1ff1df68d6b",
+            "label": "Instagram Link",
+            "name": "instagram_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5b1ff523b2cb3",
+            "label": "Facebook Link",
+            "name": "facebook_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5b182aab3d9ae",
             "label": "Area Code",
             "name": "area_code",
@@ -601,5 +631,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528759291
+    "modified": 1528821068
 }
