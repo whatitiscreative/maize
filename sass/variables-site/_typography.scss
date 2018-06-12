@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'SweetSans-Regular';
-    src: url('fonts/SweetSans-Regular.eot'),
-        url('fonts/SweetSans-Regular.eot?#iefix') format('embedded-opentype'),
+    src: url('fonts/SweetSans-Regular.eot');
+    src: url('fonts/SweetSans-Regular.eot?#iefix') format('embedded-opentype'),
         url('fonts/SweetSans-Regular.woff2') format('woff2'),
         url('fonts/SweetSans-Regular.woff') format('woff'),
         url('fonts/SweetSans-Regular.ttf') format('truetype');
@@ -10,21 +10,20 @@
 }
 
 // @font-face {
-//     font-family: 'SweetSansPro-Bold';
-//     src: url('fonts/SweetSansPro-Bold.eot');
-//     src: local('Sweet Sans Pro Bold'), local('SweetSansPro-Bold'),
-//         url('fonts/SweetSansPro-Bold.eot?#iefix') format('embedded-opentype'),
-//         url('fonts/SweetSansPro-Bold.woff2') format('woff2'),
-//         url('fonts/SweetSansPro-Bold.woff') format('woff'),
-//         url('fonts/SweetSansPro-Bold.ttf') format('truetype');
+//     font-family: 'SweetSansPro-Regular';
+//     src: url('SweetSansPro-Regular.eot');
+//     src: url('SweetSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('SweetSansPro-Regular.woff2') format('woff2'),
+//         url('SweetSansPro-Regular.woff') format('woff'),
+//         url('SweetSansPro-Regular.ttf') format('truetype');
 //     font-weight: normal;
 //     font-style: normal;
 // }
 
 @font-face {
     font-family: 'SweetSans-MediumSC';
-    src: url('fonts/SweetSans-MediumSC.eot'),
-        url('fonts/SweetSans-MediumSC.eot?#iefix') format('embedded-opentype'),
+    src: url('fonts/SweetSans-MediumSC.eot');
+    src: url('fonts/SweetSans-MediumSC.eot?#iefix') format('embedded-opentype'),
         url('fonts/SweetSans-MediumSC.woff2') format('woff2'),
         url('fonts/SweetSans-MediumSC.woff') format('woff'),
         url('fonts/SweetSans-MediumSC.ttf') format('truetype');
@@ -33,5 +32,5 @@
 }
 
 $font-primary: 'SweetSans-Regular', sans-serif;
-// $font-bold: 'SweetSansPro-Bold', sans-serif;
+// $font-secondary: 'SweetSansPro-Regular', sans-serif;
 $font-medium: 'SweetSans-MediumSC', sans-serif;

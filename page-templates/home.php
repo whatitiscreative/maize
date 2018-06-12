@@ -27,7 +27,7 @@ get_header();
                             <?php // Desktop Menu ?>
                             <nav id="site-navigation" class="main-navigation">
                                 <div class="menu-left">
-                                    <a href="mailto:<?php the_field('email_address'); ?>" target="_blank">Order Cookies</a>
+                                    <a href="#" id="open-forms">Order Cookies</a>
                                 </div>
 
                                 <div class="menu-logo">
@@ -46,7 +46,7 @@ get_header();
                 <?php // Mobile Menu ?>
                 <div class="menu-link-group">
                     <div class="menu-link">
-                        <a href="mailto:<?php the_field('email_address'); ?>" target="_blank">Order Cookies</a>
+                        <a href="#" id="open-mobile-form">Order Cookies</a>
                     </div>
                     <div class="menu-link">
                         <a href="#about" id="about-link">ABout Us</a>
@@ -55,27 +55,27 @@ get_header();
 
                 <?php // Mobile Image Grid ?>
                 <div class="mobile-grid">
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_1_caption')); ?>">
                         <img src="<?php echo get_field('modal_1_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_1_caption'); ?></div>
                     </div>
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_2_caption')); ?>">
                         <img src="<?php echo get_field('modal_2_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_2_caption'); ?></div>
                     </div>
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_3_caption')); ?>">
                         <img src="<?php echo get_field('modal_3_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_3_caption'); ?></div>
                     </div>
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_5_caption')); ?>">
                         <img src="<?php echo get_field('modal_5_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_5_caption'); ?></div>
                     </div>
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_4_caption')); ?>">
                         <img src="<?php echo get_field('modal_4_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_4_caption'); ?></div>
                     </div>
-                    <div>
+                    <div class="mobile-image-card" data-id="<?php echo string_to_id(get_field('modal_6_caption')); ?>">
                         <img src="<?php echo get_field('modal_6_preview_image')['url']; ?>">
                         <div class="mobile-grid-caption"><?php the_field('modal_6_caption'); ?></div>
                     </div>
@@ -85,17 +85,17 @@ get_header();
                 <div class="fig-grid">
                     <div class="row fig-grid-top">
                         <div class="col-xs-8">
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_1_caption')); ?>">
                                 <div class="fig-image a" style="background-image: url(<?php echo get_field('modal_1_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_1_caption'); ?></div>
                             </div>
                         </div>
                         <div class="col-xs-4">
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_2_caption')); ?>">
                                 <div class="fig-image b" style="background-image: url(<?php echo get_field('modal_2_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_2_caption'); ?></div>
                             </div>
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_3_caption')); ?>">
                                 <div class="fig-image b" style="background-image: url(<?php echo get_field('modal_3_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_3_caption'); ?></div>
                             </div>
@@ -104,19 +104,19 @@ get_header();
 
                     <div class="row fig-grid-bottom">
                         <div class="col-xs-5">
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_4_caption')); ?>">
                                 <div class="fig-image d" style="background-image: url(<?php echo get_field('modal_4_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_4_caption'); ?></div>
                             </div>
                         </div>
                         <div class="col-xs-3">
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_5_caption')); ?>">
                                 <div class="fig-image d" style="background-image: url(<?php echo get_field('modal_5_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_5_caption'); ?></div>
                             </div>    
                         </div>
                         <div class="col-xs-4">
-                            <div class="fig-image-card">
+                            <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_6_caption')); ?>">
                                 <div class="fig-image d" style="background-image: url(<?php echo get_field('modal_6_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_6_caption'); ?></div>
                             </div>
@@ -129,84 +129,422 @@ get_header();
 		</main><!-- #main -->
     </div><!-- #primary -->
 
-    <!--
-    <div class="form-container">
-        <div id="form-window-0" class="form-window">
-            <div class="form-close">
-                <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
-                        <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
-                        <g stroke-linecap="square">
-                            <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <div class="form-header">
-                <img class="form-logo" src="<?php bloginfo('template_url'); ?>/images/logo-m-black.svg">
-                <a class="form-email" href="mailto:info@maize.com">info@maize.com</a>
-            </div>
-            <div class="form-row">
-                <div class="form-headline">Event Details</div>
-                <div class="form-subhead">minimum lead time (24 hr). No deliveries on SUNDAY OR Monday.</div>
-                <div class="form-input-group">
-                    <div class="form-col">
-                        <label for="form-date">Date</label>
-                        <input type="text" id="form-date" name="date">
+    
+    <div class="form-windows-bg">
+        <div class="form-container">
+            <div class="form-clearfix">
+            <form id="order-form" name="order-form" method="post" action="submit_order_form_ajax">
+                <input type="hidden" name="recipient" value="<?php the_field('email_address'); ?>">
+                <div class="form-window" id="form-window-cheat"></div>
+                <div class="form-window" id="form-window-0">
+                    <div class="form-close">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
+                                <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
+                                <g stroke-linecap="square">
+                                    <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
+                                </g>
+                            </g>
+                        </svg>
                     </div>
-                    <div class="form-col">
-                        <label for="form-time">Time</label>
-                        <input type="text" id="form-time" name="time">
+                    <div class="form-header">
+                        <img class="form-logo" src="<?php bloginfo('template_url'); ?>/images/logo-m-black.svg">
+                        <a class="form-email" href="mailto:<?php the_field('email_address'); ?>"><?php the_field('email_address'); ?></a>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-headline">Event Details</div>
+                        <div class="form-subhead">minimum lead time (24 hr). No deliveries on SUNDAY OR Monday.</div>
+                        <div class="form-input-group">
+                            <div class="form-col">
+                                <label for="form-date">Date</label>
+                                <input type="text" id="form-date" name="date">
+                            </div>
+                            <div class="form-col">
+                                <label for="form-time">Time</label>
+                                <input type="text" id="form-time" name="time">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-headline">Event Location</div>
+                        <div class="form-subhead">We deliver within the Austin city limits.</div>
+                        <div class="form-input-group">
+                            <div class="form-col">
+                                <label for="form-address">Street Address</label>
+                                <input type="text" id="form-address" name="address">
+                            </div>
+                            <div class="form-col">
+                                <label for="form-zipcode">Zipcode</label>
+                                <input type="text" id="form-zipcode" name="zipcode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs">
+                        <button type="button" class="btn" id="form-next-btn">Next</button>
+                    </div>
+                    <div class="row center-xs">
+                        <div class="error-message"></div>
                     </div>
                 </div>
+
+
+                <div class="form-window" id="form-window-1">
+                    <div class="form-close">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
+                                <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
+                                <g stroke-linecap="square">
+                                    <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-headline">Contact Info</div>
+                        <div class="form-input-group">
+                            <div class="form-col">
+                                <label for="form-first-name">First Name</label>
+                                <input type="text" id="form-first-name" name="first-name" class="ignore-validation">
+                            </div>
+                            <div class="form-col">
+                                <label for="form-last-name">Last Name</label>
+                                <input type="text" id="form-last-name" name="last-name" class="ignore-validation">
+                            </div>
+                            <div class="form-col">
+                                <label for="form-email">Email</label>
+                                <input type="text" id="form-email" name="email" class="ignore-validation">
+                            </div>
+                            <div class="form-col">
+                                <label for="form-phone-number">Phone Number</label>
+                                <input type="text" id="form-phone-number" name="phone-number" class="ignore-validation">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-headline">Quantity (dozen) of each cookie</div>
+                        <div class="form-subhead">We deliver within the Austin city limits.</div>
+                        <div class="form-input-group">
+                            <div class="form-quantity-group">
+                                <label>Min. 3 Dozen, Max. 9 Dozen Per Order</label>
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_1_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_1_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_2_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_2_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_3_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_3_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_4_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_4_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_5_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_5_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-quantity-row">
+                                    <div class="form-quantity-name">
+                                        <span><?php the_field('modal_6_caption'); ?></span>
+                                    </div>
+                                    <div class="quantity">
+                                        <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_6_caption'); ?>">
+                                    </div>
+                                </div>
+
+                                <label class="disclaimer">For orders over 9 dozen, please <a class="pink" href="mailto:<?php the_field('email_address'); ?>">contact us</a></label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs">
+                        <button type="submit" class="btn" id="form-submit">Submit</button>
+                    </div>
+                    <div class="row center-xs">
+                        <div id="back-btn">Go Back</div>
+                    </div>
+                    <div class="row center-xs">
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+
+                <div class="form-window" id="form-window-2">
+                    <div class="form-close">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
+                                <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
+                                <g stroke-linecap="square">
+                                    <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="form-header">
+                        <img class="form-logo" src="<?php bloginfo('template_url'); ?>/images/logo-m-black.svg">
+                        <a class="form-email" href="mailto:<?php the_field('email_address'); ?>"><?php the_field('email_address'); ?></a>
+                    </div>
+                    <div class="form-success-headline">Thank You</div>
+                    <div class="form-success-body">
+                        <?php the_field('form_confirmation_message'); ?>
+                    </div>
+                    <div class="form-success-phone"><?php the_field('area_code');?><?php the_field('phone_number'); ?><br><a href="mailto:<?php the_field('email_address'); ?>"><?php the_field('email_address'); ?></a></div>
+                    <div class="form-success-signature">-Maize</div>
+                    <button type="button" class="btn" id="success-close-btn">Close</button>
+                </div>
+
+            </form>
             </div>
-            <div class="form-row">
-                <div class="form-headline">Event Location</div>
-                <div class="form-subhead">We deliver within the Austin city limits.</div>
-                <div class="form-input-group">
-                    <div class="form-col">
+        </div>
+    </div>
+
+
+
+    <div class="form-windows-bg-mobile">
+        <form id="order-form-mobile" name="order-form-mobile" method="post" action="submit_order_form_ajax">
+            <input type="hidden" name="recipient" value="<?php the_field('email_address'); ?>">
+            <div class="form-window-mobile" id="form-window-mobile">
+                <div class="form-close">
+                    <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
+                            <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
+                            <g stroke-linecap="square">
+                                <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="form-header">
+                    <img class="form-logo" src="<?php bloginfo('template_url'); ?>/images/logo-m-black.svg">
+                    <a class="form-email" href="mailto:<?php the_field('email_address'); ?>"><?php the_field('email_address'); ?></a>
+                </div>
+                <div class="form-row">
+                    <div class="form-headline">Event Details</div>
+                    <div class="form-subhead">minimum lead time (24 hr). No deliveries on SUNDAY OR Monday.</div>
+                    <div class="form-input-group">
+                        <div class="form-col">
+                            <label for="form-date">Date</label>
+                            <input type="text" id="form-date" name="date">
+                        </div>
+                        <div class="form-col">
+                            <label for="form-time">Time</label>
+                            <input type="text" id="form-time" name="time">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-headline">Event Location</div>
+                    <div class="form-subhead">We deliver within the Austin city limits.</div>
+                    <div class="form-input-container">
                         <label for="form-address">Street Address</label>
                         <input type="text" id="form-address" name="address">
                     </div>
-                    <div class="form-col">
+                    <div class="form-input-container">
                         <label for="form-zipcode">Zipcode</label>
                         <input type="text" id="form-zipcode" name="zipcode">
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-headline">Contact Info</div>
+                    <div class="form-input-container">
+                        <label for="form-first-name">First Name</label>
+                        <input type="text" id="form-first-name" name="first-name">
+                    </div>
+                    <div class="form-input-container">
+                        <label for="form-last-name">Last Name</label>
+                        <input type="text" id="form-last-name" name="last-name">
+                    </div>
+                    <div class="form-input-container">
+                        <label for="form-email">Email</label>
+                        <input type="text" id="form-email" name="email">
+                    </div>
+                    <div class="form-input-container">
+                        <label for="form-phone-number">Phone Number</label>
+                        <input type="text" id="form-phone-number" name="phone-number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-headline">Quantity (dozen) of each cookie</div>
+                    <div class="form-subhead">We deliver within the Austin city limits.</div>
+                    <div class="form-quantity-group">
+                        <label>Min. 3 Dozen, Max. 9 Dozen Per Order</label>
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_1_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_1_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_2_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_2_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_3_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_3_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_4_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_4_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_5_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_5_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-quantity-row">
+                            <div class="form-quantity-name">
+                                <span><?php the_field('modal_6_caption'); ?></span>
+                            </div>
+                            <div class="quantity">
+                                <span class="dropdown">
+                                    <select name="<?php the_field('modal_6_caption'); ?>">    
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                        <label class="disclaimer">For orders over 9 dozen, please <a class="pink" href="mailto:<?php the_field('email_address'); ?>">contact us</a></label>
+                    </div>
+                </div>
+                <div class="row center-xs">
+                    <button type="submit" class="btn" id="form-submit">Submit</button>
+                </div>
+                <div class="row center-xs">
+                    <div class="error-message"></div>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
-    -->
+   
     
 
     <?php // Modals ?>
-    <div class="modal" data-id="">
-        <div class="modal-dialog">
-            <div class="modal-close">
-                <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="#231F1E" stroke-width="1.5" fill="none" fill-rule="evenodd">
-                        <path fill="#FFF" d="M.75.75h19.5v19.5H.75z"/>
-                        <g stroke-linecap="square">
-                            <path d="M14.674 6.398L6.94 14.132M14.626 14.08l-7.63-7.63"/>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            
-            <div class="modal-inner-left">
-                <div class="modal-img" style="background-image: url(<?php bloginfo('template_url'); ?>/images/img_03.png);"></div>
-            </div>
-            <div class="modal-inner-right">
-                <div class="modal-dialog-content">
-                    <div class="modal-dialog-body">
-                        <div class="modal-dialog-body-inner">
-                            Modal Inner
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part('template-parts/modals'); ?>
+    
 
 <?php
 get_footer();

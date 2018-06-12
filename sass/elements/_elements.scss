@@ -1,5 +1,14 @@
 html {
 	box-sizing: border-box;
+
+	// the mobile hero is wider than the screen on purpose
+	// this is to prevent scrolling horizontally
+	overflow-x: hidden;
+	width: 100vw;
+
+	&.halt {
+		overflow: hidden;
+	}
 }
 
 *,
@@ -10,7 +19,12 @@ html {
 
 body {
 	background-color: $color-white;
+
+	// the mobile hero is wider than the screen on purpose
+	// this is to prevent scrolling horizontally
 	overflow-x: hidden;
+	position: relative;
+	width: 100vw;
 
 	&.halt {
 		overflow: hidden;

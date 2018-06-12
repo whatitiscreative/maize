@@ -81,7 +81,7 @@
             "name": "about_copy",
             "type": "textarea",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -93,6 +93,25 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "br"
+        },
+        {
+            "key": "field_5b1f0399cc373",
+            "label": "Form Confirmation Message",
+            "name": "form_confirmation_message",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5b182bd910bb0",
@@ -112,7 +131,7 @@
         },
         {
             "key": "field_5b17ef98bbc7e",
-            "label": "Modal 1 Preview Image",
+            "label": "Image",
             "name": "modal_1_preview_image",
             "type": "image",
             "instructions": "",
@@ -136,7 +155,7 @@
         },
         {
             "key": "field_5b1827b7a3186",
-            "label": "Modal 1 Caption",
+            "label": "Caption",
             "name": "modal_1_caption",
             "type": "text",
             "instructions": "",
@@ -154,32 +173,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b17efd9bbc7f",
-            "label": "Modal 1 Image",
-            "name": "modal_1_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b17f017bbc80",
-            "label": "Modal 1 Copy",
+            "label": "Copy",
             "name": "modal_1_copy",
             "type": "textarea",
             "instructions": "",
@@ -214,7 +209,7 @@
         },
         {
             "key": "field_5b17f06bbbc81",
-            "label": "Modal 2 Preview Image",
+            "label": "Image",
             "name": "modal_2_preview_image",
             "type": "image",
             "instructions": "",
@@ -238,7 +233,7 @@
         },
         {
             "key": "field_5b1827cca3187",
-            "label": "Modal 2 Caption",
+            "label": "Caption",
             "name": "modal_2_caption",
             "type": "text",
             "instructions": "",
@@ -256,32 +251,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b17f07bbbc82",
-            "label": "Modal 2 Image",
-            "name": "modal_2_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b17f08ebbc83",
-            "label": "Modal 2 Copy",
+            "label": "Copy",
             "name": "modal_2_copy",
             "type": "textarea",
             "instructions": "",
@@ -316,7 +287,7 @@
         },
         {
             "key": "field_5b1827e8a3188",
-            "label": "Modal 3 Preview Image",
+            "label": "Image",
             "name": "modal_3_preview_image",
             "type": "image",
             "instructions": "",
@@ -340,7 +311,7 @@
         },
         {
             "key": "field_5b1827f9a3189",
-            "label": "Modal 3 Caption",
+            "label": "Caption",
             "name": "modal_3_caption",
             "type": "text",
             "instructions": "",
@@ -358,32 +329,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b18280ea318a",
-            "label": "Modal 3 Image",
-            "name": "modal_3_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b182833a318b",
-            "label": "Modal 3 Copy",
+            "label": "Copy",
             "name": "modal_3_copy",
             "type": "textarea",
             "instructions": "",
@@ -418,7 +365,7 @@
         },
         {
             "key": "field_5b182847a318c",
-            "label": "Modal 4 Preview Image",
+            "label": "Image",
             "name": "modal_4_preview_image",
             "type": "image",
             "instructions": "",
@@ -442,7 +389,7 @@
         },
         {
             "key": "field_5b18285ea318d",
-            "label": "Modal 4 Caption",
+            "label": "Caption",
             "name": "modal_4_caption",
             "type": "text",
             "instructions": "",
@@ -460,32 +407,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b182867a318e",
-            "label": "Modal 4 Image",
-            "name": "modal_4_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b182874a318f",
-            "label": "Modal 4 Copy",
+            "label": "Copy",
             "name": "modal_4_copy",
             "type": "textarea",
             "instructions": "",
@@ -520,7 +443,7 @@
         },
         {
             "key": "field_5b182a08a3190",
-            "label": "Modal 5 Preview Image",
+            "label": "Image",
             "name": "modal_5_preview_image",
             "type": "image",
             "instructions": "",
@@ -544,7 +467,7 @@
         },
         {
             "key": "field_5b182a25a3191",
-            "label": "Modal 5 Caption",
+            "label": "Caption",
             "name": "modal_5_caption",
             "type": "text",
             "instructions": "",
@@ -562,32 +485,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b182a31a3192",
-            "label": "Modal 5 Image",
-            "name": "modal_5_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b182a48a3193",
-            "label": "Modal 5 Copy",
+            "label": "Copy",
             "name": "modal_5_copy",
             "type": "textarea",
             "instructions": "",
@@ -622,7 +521,7 @@
         },
         {
             "key": "field_5b182a57a3194",
-            "label": "Modal 6 Preview Image",
+            "label": "Image",
             "name": "modal_6_preview_image",
             "type": "image",
             "instructions": "",
@@ -646,7 +545,7 @@
         },
         {
             "key": "field_5b182a63a3195",
-            "label": "Modal 6 Caption",
+            "label": "Caption",
             "name": "modal_6_caption",
             "type": "text",
             "instructions": "",
@@ -664,32 +563,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b182a6ea3196",
-            "label": "Modal 6 Image",
-            "name": "modal_6_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5b182a7ba3197",
-            "label": "Modal 6 Copy",
+            "label": "Copy",
             "name": "modal_6_copy",
             "type": "textarea",
             "instructions": "",
@@ -718,7 +593,7 @@
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
@@ -726,5 +601,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528311115
+    "modified": 1528759291
 }

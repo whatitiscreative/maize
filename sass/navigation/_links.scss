@@ -1,19 +1,22 @@
 a {
-	color: $color-black;
+	color: $color-pink;
 	text-decoration: none;
 	transition: 0.3s ease-out;
 
-	&:visited {
-		color: inherit;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: inherit;
-	}
+	// &:visited {
+	// 	color: inherit;
+	// }
+
+	// &:hover,
+	// &:focus,
+	// &:active {
+	// 	color: inherit;
+	// }
+
 	&:focus {
 		outline: 0;
 	}
+	
 	&:hover,
 	&:active {
 		outline: 0;
