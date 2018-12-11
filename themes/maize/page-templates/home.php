@@ -7,6 +7,14 @@
  * @since Maize 1.0
  */
 
+$date_time_headline    = get_field('date_time_headline', 'option');
+$date_time_subhead     = get_field('date_time_subhead', 'option');
+$location_headline     = get_field('location_headline', 'option');
+$location_subhead      = get_field('location_subhead', 'option');
+$quantity_headline     = get_field('quantity_headline', 'option');
+$quantity_subhead      = get_field('quantity_subhead', 'option');
+$above_order_form_note = get_field('above_order_form_note', 'option');
+$below_order_form_note = get_field('below_order_form_note', 'option');
 
 get_header();
 ?>
@@ -49,7 +57,7 @@ get_header();
                         <a href="/order">Order Cookies</a>
                     </div>
                     <div class="menu-link">
-                        <a href="#about" id="about-link">ABout Us</a>
+                        <a href="#about" id="about-link">About Us</a>
                     </div>
                 </div>
 
@@ -113,7 +121,7 @@ get_header();
                             <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_5_caption')); ?>">
                                 <div class="fig-image d" style="background-image: url(<?php echo get_field('modal_5_preview_image')['url']; ?>);"></div>
                                 <div class="fig-caption"><?php the_field('modal_5_caption'); ?></div>
-                            </div>    
+                            </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="fig-image-card" data-id="<?php echo string_to_id(get_field('modal_6_caption')); ?>">
@@ -129,7 +137,7 @@ get_header();
 		</main><!-- #main -->
     </div><!-- #primary -->
 
-    
+
     <div class="form-windows-bg">
         <div class="form-container">
             <div class="form-clearfix">
@@ -152,8 +160,8 @@ get_header();
                             <a class="form-email" href="mailto:<?php the_field('email_address'); ?>"><?php the_field('email_address'); ?></a>
                         </div>
                         <div class="form-row">
-                            <div class="form-headline">Event Details</div>
-                            <div class="form-subhead">minimum lead time (24 hr). No deliveries on SUNDAY OR Monday.</div>
+                            <div class="form-headline"><?php echo $date_time_headline; ?></div>
+                            <div class="form-subhead"><?php echo $date_time_subhead; ?></div>
                             <div class="form-input-group">
                                 <div class="form-col">
                                     <label for="form-date">Date</label>
@@ -166,8 +174,8 @@ get_header();
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-headline">Event Location</div>
-                            <div class="form-subhead">We deliver within the Austin city limits.</div>
+                            <div class="form-headline"><?php echo $location_headline; ?></div>
+                            <div class="form-subhead"><?php echo $location_subhead; ?></div>
                             <div class="form-input-group">
                                 <div class="form-col">
                                     <label for="form-address">Street Address</label>
@@ -221,66 +229,24 @@ get_header();
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-headline">Quantity (dozen) of each cookie</div>
-                            <div class="form-subhead">We deliver within the Austin city limits.</div>
+                            <div class="form-headline"><?php echo $quantity_headline; ?></div>
+                            <div class="form-subhead"><?php echo $quantity_subhead; ?></div>
                             <div class="form-input-group">
                                 <div class="form-quantity-group">
-                                    <label>Min. 3 Dozen, Max. 9 Dozen Per Order</label>
+                                    <label><?php echo $above_order_form_note; ?></label>
+
+                                    <?php while ( have_rows('cookies', 'options') ) : the_row(); ?>
                                     <div class="form-quantity-row">
                                         <div class="form-quantity-name">
-                                            <span><?php the_field('modal_1_caption'); ?></span>
+                                            <span><?php the_sub_field('cookie'); ?></span>
                                         </div>
                                         <div class="quantity">
                                             <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_1_caption'); ?>">
                                         </div>
                                     </div>
+                                    <?php endwhile; ?>
 
-                                    <div class="form-quantity-row">
-                                        <div class="form-quantity-name">
-                                            <span><?php the_field('modal_2_caption'); ?></span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_2_caption'); ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-quantity-row">
-                                        <div class="form-quantity-name">
-                                            <span><?php the_field('modal_3_caption'); ?></span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_3_caption'); ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-quantity-row">
-                                        <div class="form-quantity-name">
-                                            <span><?php the_field('modal_4_caption'); ?></span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_4_caption'); ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-quantity-row">
-                                        <div class="form-quantity-name">
-                                            <span><?php the_field('modal_5_caption'); ?></span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_5_caption'); ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-quantity-row">
-                                        <div class="form-quantity-name">
-                                            <span><?php the_field('modal_6_caption'); ?></span>
-                                        </div>
-                                        <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_6_caption'); ?>">
-                                        </div>
-                                    </div>
-
-                                    <label class="disclaimer">For orders over 9 dozen, please <a class="pink" href="mailto:<?php the_field('email_address'); ?>">contact us</a></label>
+                                    <label class="disclaimer"><?php echo $below_order_form_note; ?></label>
 
                                 </div>
                             </div>
@@ -329,7 +295,7 @@ get_header();
 
     <?php // Modals ?>
     <?php get_template_part('template-parts/modals'); ?>
-    
+
 
 <?php
 get_footer();

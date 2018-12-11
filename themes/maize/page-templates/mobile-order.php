@@ -1,4 +1,13 @@
 <?php
+
+
+
+// NOTE: Not in use!
+
+
+
+
+
 /**
  * Template Name: Mobile Order Form
  *
@@ -6,7 +15,6 @@
  * @subpackage Maize
  * @since Maize 1.0
  */
-
 
 get_header();
 
@@ -24,17 +32,29 @@ $area_code              = get_field('area_code', $home_page_id);
 $phone_number           = get_field('phone_number', $home_page_id);
 $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
 
+// $date_time_headline    = get_field('date_time_headline', 'option');
+// $date_time_subhead     = get_field('date_time_subhead', 'option');
+// $location_headline     = get_field('location_headline', 'option');
+// $location_subhead      = get_field('location_subhead', 'option');
+// $quantity_headline     = get_field('quantity_headline', 'option');
+// $quantity_subhead      = get_field('quantity_subhead', 'option');
+// $above_order_form_note = get_field('above_order_form_note', 'option');
+// $below_order_form_note = get_field('below_order_form_note', 'option');
+
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-   
+
         <div class="form-container-mobile">
             <div class="form-window-mobile" id="form-window-cheat"></div>
             <div class="form-window-mobile" id="form-window-mobile-0">
                 <form id="order-form" name="order-form" method="post" action="submit_order_form_ajax">
-                    <input type="hidden" name="recipient" value="<?php echo $email_address; ?>">
+
+                    <!-- <input type="hidden" name="recipient" value="<?php echo $email_address; ?>"> -->
+                    <input type="hidden" name="recipient" value="marc@what.it.is">
+
                     <div class="form-close">
                         <a href="/">
                             <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
@@ -52,8 +72,8 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                         <a class="form-email" href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a>
                     </div>
                     <div class="form-row">
-                        <div class="form-headline">Event Details</div>
-                        <div class="form-subhead">minimum lead time (24 hr). No deliveries on SUNDAY OR Monday.</div>
+                        <div class="form-headline"><?php echo $date_time_headline; ?></div>
+                        <div class="form-subhead"><?php echo $date_time_subhead; ?></div>
                         <div class="form-input-group">
                             <div class="form-col">
                                 <label for="form-date">Date</label>
@@ -66,8 +86,8 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-headline">Event Location</div>
-                        <div class="form-subhead">We deliver within the Austin city limits.</div>
+                        <div class="form-headline"><?php echo $location_headline; ?></div>
+                        <div class="form-subhead"><?php echo $location_subhead; ?></div>
                         <div class="form-input-container">
                             <label for="form-address">Street Address</label>
                             <input type="text" id="form-address" name="address">
@@ -97,17 +117,20 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-headline">Quantity (dozen) of each cookie</div>
-                        <div class="form-subhead">We deliver within the Austin city limits.</div>
+                        <div class="form-headline"><?php echo $quantity_headline; ?></div>
+                        <div class="form-subhead"><?php echo $quantity_subhead; ?></div>
                         <div class="form-quantity-group">
-                            <label>Min. 3 Dozen, Max. 9 Dozen Per Order</label>
+                            <label><?php echo $above_order_form_note; ?></label>
+
+                            sekhv sejhv bhjsevb jhs
+                            <?php while ( have_rows('cookies', 'options') ) : the_row(); ?>
                             <div class="form-quantity-row">
                                 <div class="form-quantity-name">
-                                    <span><?php echo $modal_1_caption; ?></span>
+                                    <span><?php the_sub_field('cookie'); ?></span>
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_1_caption; ?>">    
+                                        <select name="<?php the_sub_field('cookie'); ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -122,6 +145,9 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                     </span>
                                 </div>
                             </div>
+                            <?php endwhile; ?>
+
+
 
                             <div class="form-quantity-row">
                                 <div class="form-quantity-name">
@@ -129,7 +155,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_2_caption; ?>">    
+                                        <select name="<?php echo $modal_2_caption; ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -151,7 +177,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_3_caption; ?>">    
+                                        <select name="<?php echo $modal_3_caption; ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -173,7 +199,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_4_caption; ?>">    
+                                        <select name="<?php echo $modal_4_caption; ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -195,7 +221,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_5_caption; ?>">    
+                                        <select name="<?php echo $modal_5_caption; ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -217,7 +243,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                 </div>
                                 <div class="quantity">
                                     <span class="dropdown">
-                                        <select name="<?php echo $modal_6_caption; ?>">    
+                                        <select name="<?php echo $modal_6_caption; ?>">
                                             <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -232,7 +258,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                                     </span>
                                 </div>
                             </div>
-                            <label class="disclaimer">For orders over 9 dozen, please <a class="pink" href="mailto:<?php echo $email_address; ?>">contact us</a></label>
+                            <label class="disclaimer"><?php echo $below_order_form_note; ?></label>
                         </div>
                     </div>
                     <div class="row center-xs">
@@ -271,12 +297,12 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                 <a href="/"><button type="button" class="btn" id="success-close-btn">Close</button></a>
             </div>
         </div>
-            
+
 
 
 		</main><!-- #main -->
     </div><!-- #primary -->
-    
+
 
 <?php
 get_footer();

@@ -7,6 +7,10 @@
  * @package Maize
  */
 
+
+require_once get_theme_file_path( 'inc/acf-options-page.php' );
+
+
 if(!function_exists('maize_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -44,7 +48,7 @@ function remove_admin_links() {
    // Comments
    remove_menu_page('edit-comments.php');
 }
-add_action('admin_menu', 'remove_admin_links'); 
+add_action('admin_menu', 'remove_admin_links');
 
 
 /**
@@ -52,7 +56,7 @@ add_action('admin_menu', 'remove_admin_links');
  */
 function maize_scripts() {
 	wp_enqueue_style('maize-style', get_stylesheet_uri());
-	
+
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', [], NULL, TRUE);
 	wp_enqueue_script('tweenlite', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js', [], NULL, TRUE);
