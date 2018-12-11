@@ -32,14 +32,14 @@ $area_code              = get_field('area_code', $home_page_id);
 $phone_number           = get_field('phone_number', $home_page_id);
 $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
 
-// $date_time_headline    = get_field('date_time_headline', 'option');
-// $date_time_subhead     = get_field('date_time_subhead', 'option');
-// $location_headline     = get_field('location_headline', 'option');
-// $location_subhead      = get_field('location_subhead', 'option');
-// $quantity_headline     = get_field('quantity_headline', 'option');
-// $quantity_subhead      = get_field('quantity_subhead', 'option');
-// $above_order_form_note = get_field('above_order_form_note', 'option');
-// $below_order_form_note = get_field('below_order_form_note', 'option');
+$date_time_headline    = get_field('date_time_headline', 'option');
+$date_time_subhead     = get_field('date_time_subhead', 'option');
+$location_headline     = get_field('location_headline', 'option');
+$location_subhead      = get_field('location_subhead', 'option');
+$quantity_headline     = get_field('quantity_headline', 'option');
+$quantity_subhead      = get_field('quantity_subhead', 'option');
+$above_order_form_note = get_field('above_order_form_note', 'option');
+$below_order_form_note = get_field('below_order_form_note', 'option');
 
 ?>
 
@@ -52,8 +52,7 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
             <div class="form-window-mobile" id="form-window-mobile-0">
                 <form id="order-form" name="order-form" method="post" action="submit_order_form_ajax">
 
-                    <!-- <input type="hidden" name="recipient" value="<?php echo $email_address; ?>"> -->
-                    <input type="hidden" name="recipient" value="marc@what.it.is">
+                    <input type="hidden" name="recipient" value="<?php echo $email_address; ?>">
 
                     <div class="form-close">
                         <a href="/">
@@ -121,33 +120,6 @@ $confirmation_message   = get_field('form_confirmation_message', $home_page_id);
                         <div class="form-subhead"><?php echo $quantity_subhead; ?></div>
                         <div class="form-quantity-group">
                             <label><?php echo $above_order_form_note; ?></label>
-
-                            sekhv sejhv bhjsevb jhs
-                            <?php while ( have_rows('cookies', 'options') ) : the_row(); ?>
-                            <div class="form-quantity-row">
-                                <div class="form-quantity-name">
-                                    <span><?php the_sub_field('cookie'); ?></span>
-                                </div>
-                                <div class="quantity">
-                                    <span class="dropdown">
-                                        <select name="<?php the_sub_field('cookie'); ?>">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                        </select>
-                                    </span>
-                                </div>
-                            </div>
-                            <?php endwhile; ?>
-
-
 
                             <div class="form-quantity-row">
                                 <div class="form-quantity-name">
