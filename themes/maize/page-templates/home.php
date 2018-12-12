@@ -246,7 +246,7 @@ get_header();
                                     </div>
                                     <?php endwhile; ?>
 
-                                    <label class="disclaimer"><?php echo $below_order_form_note; ?></label>
+                                    <label class="disclaimer" style="line-height:2rem;"><?php echo $below_order_form_note; ?></label>
 
                                 </div>
                             </div>
