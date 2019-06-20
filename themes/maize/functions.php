@@ -111,6 +111,9 @@ function submit_order_form_ajax() {
 				$email_sender = $email_recipient;
 			}
 
+
+			$senderName = ! empty($_query['first-name']) ? $_query['first-name'] : 'friend';
+
 			// create first part of email to send
 			$email = '';
 			$email .= 'First Name: ' . $_query['first-name'] . "\r\n";
@@ -121,9 +124,11 @@ function submit_order_form_ajax() {
 			$email .= 'Zip Code: ' . $_query['zipcode'] . "\r\n";
 			$email .= "\r\n";
 			$email .= 'Order Details: ' . "\r\n";
+			$email .= "\r\n";
 			$email .= 'Date: ' . $_query['date'] . "\r\n";
 			$email .= 'Time: ' . $_query['time'] . "\r\n";
 			$email .= "\r\n";
+			$email .= 'Cookies: ' . "\r\n";
 
 			// the cookie/product names are editable within wordpress so we don't know what they will be
 			// going to unset all data from $_query and then strip out the underscores in the remaining keys
@@ -136,7 +141,6 @@ function submit_order_form_ajax() {
 			unset($_query['date']);
 			unset($_query['time']);
 			unset($_query['recipient']);
-
 			// loop through remaining keys and if their value is not 0, add them to the email
 			// will produce something like 'Cookie Name: 3'
 			foreach($_query as $key => $value) {
@@ -146,13 +150,28 @@ function submit_order_form_ajax() {
 				}
 			}
 
-			// send the email
-			$sent = wp_mail($email_recipient, $email_subject, $email);
+			// Autoresponder
+			// NOTE: Muse use double quotes for glue in join fn.
+			$autoresponderEmail = join( '\r\n', [
+				"Greetings {$senderName}. Nice to know ya!",
+				' ',
+				'Your order has been received! We will begin prepping your order for delivery here in lovely Austin, TX, and will see you at your scheduled delivery time. If you have any questions regarding your order, please don’t hesitate to reach out.',
+				' ',
+				'Thanks!',
+				' ',
+				'Stacy Baker',
+				'Founder',
+			]);
+
+			// send the emails
+			$sentToShop = wp_mail($email_recipient, $email_subject, $email);
+			$sentToUser = wp_mail($email_sender, 'Your Maize Order', $autoresponderEmail);
 
 			// set response data for js
 			$response = [
-				'success' => $sent,
-				'recipient' => $email_recipient,
+				'success' => $sentToShop && $sentToUser,
+				'emailRecipient' => $email_recipient,
+				'emailSender' => $email_sender,
 				'subject' => $email_subject,
 				'email' => $email,
 			];
