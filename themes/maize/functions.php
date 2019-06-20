@@ -101,7 +101,7 @@ function submit_order_form_ajax() {
 
 			// set email vars
 			$email_recipient = $_query['recipient'];
-			$email_recipient = 'marc.wiest@gmail.com';
+			// $email_recipient = 'dev@what.it.is';
 			$email_subject = 'New Order';
 
 			// get user email address
