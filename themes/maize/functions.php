@@ -95,51 +95,51 @@ function submit_order_form_ajax() {
 
 		// not sure how to prevent the double serialization
 		// so parsing the query string into an array
-		parse_str($_POST['query'], $query);
+		parse_str($_POST['query'], $_query);
 
-		if(!empty($query)) {
+		if(!empty($_query)) {
 
 			// set email vars
-			$email_recipient = $query['recipient'];
-			// $email_recipient = 'junie@what.it.is';
+			$email_recipient = $_query['recipient'];
+			$email_recipient = 'marc.wiest@gmail.com';
 			$email_subject = 'New Order';
 
 			// get user email address
-			if(isset($query['email'])) {
-				$email_sender = $query['email'];
+			if(isset($_query['email'])) {
+				$email_sender = $_query['email'];
 			} else {
 				$email_sender = $email_recipient;
 			}
 
 			// create first part of email to send
 			$email = '';
-			$email .= 'First Name: ' . $query['first-name'] . "\r\n";
-			$email .= 'Last Name: ' . $query['last-name'] . "\r\n";
-			$email .= 'Email Address: ' . $query['email'] . "\r\n";
-			$email .= 'Phone Number: ' . $query['phone-number'] . "\r\n";
-			$email .= 'Street Address: ' . $query['address'] . "\r\n";
-			$email .= 'Zip Code: ' . $query['zipcode'] . "\r\n";
+			$email .= 'First Name: ' . $_query['first-name'] . "\r\n";
+			$email .= 'Last Name: ' . $_query['last-name'] . "\r\n";
+			$email .= 'Email Address: ' . $_query['email'] . "\r\n";
+			$email .= 'Phone Number: ' . $_query['phone-number'] . "\r\n";
+			$email .= 'Street Address: ' . $_query['address'] . "\r\n";
+			$email .= 'Zip Code: ' . $_query['zipcode'] . "\r\n";
 			$email .= "\r\n";
 			$email .= 'Order Details: ' . "\r\n";
-			$email .= 'Date: ' . $query['date'] . "\r\n";
-			$email .= 'Time: ' . $query['time'] . "\r\n";
+			$email .= 'Date: ' . $_query['date'] . "\r\n";
+			$email .= 'Time: ' . $_query['time'] . "\r\n";
 			$email .= "\r\n";
 
 			// the cookie/product names are editable within wordpress so we don't know what they will be
-			// going to unset all data from $query and then strip out the underscores in the remaining keys
-			unset($query['first-name']);
-			unset($query['last-name']);
-			unset($query['email']);
-			unset($query['phone-number']);
-			unset($query['address']);
-			unset($query['zipcode']);
-			unset($query['date']);
-			unset($query['time']);
-			unset($query['recipient']);
+			// going to unset all data from $_query and then strip out the underscores in the remaining keys
+			unset($_query['first-name']);
+			unset($_query['last-name']);
+			unset($_query['email']);
+			unset($_query['phone-number']);
+			unset($_query['address']);
+			unset($_query['zipcode']);
+			unset($_query['date']);
+			unset($_query['time']);
+			unset($_query['recipient']);
 
 			// loop through remaining keys and if their value is not 0, add them to the email
 			// will produce something like 'Cookie Name: 3'
-			foreach($query as $key => $value) {
+			foreach($_query as $key => $value) {
 				if($value !== '0') {
 					$cookie = str_replace('_', ' ', $key);
 					$email .= $cookie . ': ' . $value . " dozen\r\n";
@@ -147,10 +147,15 @@ function submit_order_form_ajax() {
 			}
 
 			// send the email
-			mail($recipient_email, $email_subject, $email);
+			$sent = wp_mail($email_recipient, $email_subject, $email);
 
 			// set response data for js
-			$response = ['success' => 'success!', 'email' => $email];
+			$response = [
+				'success' => $sent,
+				'recipient' => $email_recipient,
+				'subject' => $email_subject,
+				'email' => $email,
+			];
 
 			// echo response as json
 			echo json_encode($response);
