@@ -123,12 +123,11 @@ function submit_order_form_ajax() {
 			$email .= 'Street Address: ' . $_query['address'] . "\r\n";
 			$email .= 'Zip Code: ' . $_query['zipcode'] . "\r\n";
 			$email .= "\r\n";
-			$email .= 'Order Details: ' . "\r\n";
+			$email .= 'ORDER DETAILS' . "\r\n";
 			$email .= "\r\n";
 			$email .= 'Date: ' . $_query['date'] . "\r\n";
 			$email .= 'Time: ' . $_query['time'] . "\r\n";
-			$email .= "\r\n";
-			$email .= 'Cookies: ' . "\r\n";
+			$email .= 'Order: ' . "\r\n";
 
 			// the cookie/product names are editable within wordpress so we don't know what they will be
 			// going to unset all data from $_query and then strip out the underscores in the remaining keys
@@ -152,7 +151,7 @@ function submit_order_form_ajax() {
 
 			// Autoresponder
 			// NOTE: Muse use double quotes for glue in join fn.
-			$autoresponderEmail = join( '\r\n', [
+			$autoresponderEmail = join( "\r\n", [
 				"Greetings {$senderName}. Nice to know ya!",
 				' ',
 				'Your order has been received! We will begin prepping your order for delivery here in lovely Austin, TX, and will see you at your scheduled delivery time. If you have any questions regarding your order, please don’t hesitate to reach out.',
