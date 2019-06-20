@@ -241,7 +241,7 @@ get_header();
                                             <span><?php the_sub_field('cookie'); ?></span>
                                         </div>
                                         <div class="quantity">
-                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php the_field('modal_1_caption'); ?>">
+                                            <input type="number" min="0" max="9" step="1" value="0" name="<?php str_replace( ' ', '_', the_sub_field('cookie') ); ?>">
                                         </div>
                                     </div>
                                     <?php endwhile; ?>
