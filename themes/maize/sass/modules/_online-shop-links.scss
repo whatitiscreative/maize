@@ -1,0 +1,44 @@
+
+$online-shop-link-breakpoint: 768px !default;
+
+.online-shop-link {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @media screen and (min-width: $online-shop-link-breakpoint) {
+        max-width: 130px;
+        max-height: 113px;
+        bottom: auto;
+        top: 30px;
+        left: 30px;
+    }
+    span {
+        display: block;
+        width: 100%;
+        background-color: #EE3ABE;
+        color: #fff;
+        height: 44px;
+        line-height: 44px;
+        font-size: 12px;
+        font-family: Helvetica;
+        letter-spacing: .75px;
+        text-align: center;
+        text-transform: uppercase;
+        @media screen and (min-width: $online-shop-link-breakpoint) {
+            display: none;
+        }
+    }
+    img {
+        display: none;
+        max-width: 100%;
+        transition: all .5s ease-out;
+        &:hover {
+            transform: rotate(360deg) scale(0.8);
+        }
+        @media screen and (min-width: $online-shop-link-breakpoint) {
+            display: inline-block;
+        }
+    }
+}

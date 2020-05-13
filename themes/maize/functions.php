@@ -8,7 +8,7 @@
  */
 
 
-require_once get_theme_file_path( 'inc/acf-options-page.php' );
+require_once get_theme_file_path( 'inc/acf-options-pages.php' );
 
 
 if(!function_exists('maize_setup')):
@@ -62,7 +62,7 @@ function maize_scripts() {
 	wp_enqueue_script('tweenlite', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js', [], NULL, TRUE);
 	wp_enqueue_script('matchheight', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js', [], NULL, TRUE);
 	wp_enqueue_script('validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js', [], NULL, TRUE);
-	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', [], NULL, TRUE);
+	wp_enqueue_script('main', get_template_directory_uri() . '/main.js', [], NULL, TRUE);
 
 	// Declare global variables for use with ajax script
 	wp_localize_script('main', 'global_vars_array', ['ajaxurl' => admin_url('admin-ajax.php')]);

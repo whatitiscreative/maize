@@ -1,3 +1,5 @@
+
+@import "variables-site/z-index";
 @import "variables-site/colors";
 @import "variables-site/typography";
 @import "base/config";
@@ -38,7 +40,9 @@
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-@import "modules/accessibility";
+@import
+    "modules/accessibility",
+    "modules/online-shop-links";
 
 /*--------------------------------------------------------------
 # Pages

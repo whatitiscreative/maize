@@ -58,7 +58,7 @@
 }
 
 .menu-link {
-	flex-basis: 50%;
+	flex-basis: 100%;
 
 	a {
 		color: $color-salmon;
@@ -72,9 +72,11 @@
 		text-transform: uppercase;
 	}
 
-	&:first-child {
+	&:not(:last-child) {
 		border-right: 1px solid $color-black;
+	}
 
+	&:first-child {
 		a {
 			color: $color-pink;
 		}

@@ -35,7 +35,7 @@ get_header();
                             <?php // Desktop Menu ?>
                             <nav id="site-navigation" class="main-navigation">
                                 <div class="menu-left">
-                                    <a href="#" id="open-forms">Order Cookies</a>
+                                    <?php // <a href="#" id="open-forms">Order Cookies</a> ?>
                                 </div>
 
                                 <div class="menu-logo">
@@ -53,9 +53,10 @@ get_header();
 
                 <?php // Mobile Menu ?>
                 <div class="menu-link-group">
+                    <?php /*
                     <div class="menu-link">
                         <a href="/order">Order Cookies</a>
-                    </div>
+                    </div> */ ?>
                     <div class="menu-link">
                         <a href="#about" id="about-link">About Us</a>
                     </div>
