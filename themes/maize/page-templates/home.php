@@ -43,7 +43,7 @@ get_header();
                                 </div>
 
                                 <div class="menu-right">
-                                    <a href="#about" id="about-link">About Us</a>
+                                    <?php // <a href="#about" id="about-link">About Us</a> ?>
                                 </div>
                             </nav>
                         </header>
@@ -56,10 +56,10 @@ get_header();
                     <?php /*
                     <div class="menu-link">
                         <a href="/order">Order Cookies</a>
-                    </div> */ ?>
+                    </div>
                     <div class="menu-link">
                         <a href="#about" id="about-link">About Us</a>
-                    </div>
+                    </div> */ ?>
                 </div>
 
                 <?php // Mobile Image Grid ?>

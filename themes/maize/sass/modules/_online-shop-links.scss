@@ -26,6 +26,10 @@ $online-shop-link-breakpoint: 768px !default;
         letter-spacing: .75px;
         text-align: center;
         text-transform: uppercase;
+        transition: all .5s ease-out;
+        &:hover {
+            background-color: #FF6D81;
+        }
         @media screen and (min-width: $online-shop-link-breakpoint) {
             display: none;
         }
@@ -39,6 +43,24 @@ $online-shop-link-breakpoint: 768px !default;
         }
         @media screen and (min-width: $online-shop-link-breakpoint) {
             display: inline-block;
+        }
+    }
+    svg {
+        display: none;
+        &, * {
+            transition: all .5s ease-out;
+        }
+        @media screen and (min-width: $online-shop-link-breakpoint) {
+            display: inline-block;
+        }
+        polygon:first-child {
+            fill: #EC3BBE;
+        }
+    }
+    &:hover svg {
+        transform: scale(1.1);
+        polygon:first-child {
+            fill: #FF6D81;
         }
     }
 }

@@ -47,7 +47,7 @@
 }
 
 .menu-link-group {
-	border: 1px solid $color-black;
+	// border: 1px solid $color-black;
 	display: flex;
 	flex-grow: 1;
 	margin: 0 0 20px 0;
@@ -58,7 +58,7 @@
 }
 
 .menu-link {
-	flex-basis: 100%;
+	flex-basis: 50%;
 
 	a {
 		color: $color-salmon;
