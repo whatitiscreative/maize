@@ -35,4 +35,12 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+	<?php if ($url = esc_url(get_field('online_shop_url', 'options'))) : ?>
+		<a class="online-shop-link" href="<?php echo $url; ?>" target="_blank">
+			<span>Order Online</span>
+			<img src="<?php echo get_theme_file_uri('images/order-online-badge.png'); ?>" alt="Order online">
+			<?php // include get_theme_file_path('images/order-online-badge.png') ?>
+		</a>
+	<?php endif; ?>
+
 	<div id="content" class="site-content">
