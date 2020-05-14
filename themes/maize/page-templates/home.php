@@ -53,13 +53,12 @@ get_header();
 
                 <?php // Mobile Menu ?>
                 <div class="menu-link-group">
-                    <?php /*
                     <div class="menu-link">
-                        <a href="/order">Order Cookies</a>
+                        <!-- <a href="/order">Order Cookies</a> -->
                     </div>
                     <div class="menu-link">
-                        <a href="#about" id="about-link">About Us</a>
-                    </div> */ ?>
+                        <!-- <a href="#about" id="about-link">About Us</a> -->
+                    </div>
                 </div>
 
                 <?php // Mobile Image Grid ?>
